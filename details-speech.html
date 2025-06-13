@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio Detail</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/proyek/speech1.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/proyek/speech3.png" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Kategori</strong>: Aplication</li>
+                <li><strong>Implementasi</strong>: Python, Flask, HTML, CSS, bootstrap, JavaScript, SQL</li>
+                <li><strong>Tools</strong>: Visual studio code, SQL Server</li>
+                <li><strong>Model</strong>: RoBERTa fine tune</li>
+                <li><strong>Library</strong>: Transformers huggingface, pytorch, pyannote, speech_recognition</li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="portfolio-description">
+            <h2>Speech Analytics for Smarter Support</h2>
+            <ul>
+              <li><strong>Problem Definition</strong></li>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">
+                setiap harinya perusahaan layanan pelanggan menerima puluhan atau mungkin ratusan panggilan telepon
+                setiap
+                hari. Tapi proses pelacakan terkait jumlah panggilan, dan apakah
+                customer puas dengan pelayanan yang diberikan masih terbatas. </p>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">
+                Bagaimana jika ada sistem yang dapat melacak berapa lama mereka telpon, total handle time, berapa kali
+                customer telpon dan apakah bantuan call agent membantu? </p>
+              <p>Solusi yang diusulkan :</p>
+              <ul>
+                <li>Speech recognition </li>
+                <p>menggunakan model speech to text menggunakan whisper</p>
+                <li>Natural Language Processing</li>
+                <p>1. Deteksi sentimen</p>
+                <p>2. Analisis emosi pelanggan</p>
+              </ul>
+              <li><strong> Data Input</strong></li>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Rekaman audio percakapan pelanggan
+                menggunakan OpenAI Whisper</p>
+              <li><strong> Exploratory Data Analysis (EDA)</strong></li>
+              <ul>
+                <li>Total jumlah panggilan perhari setiap agent service</li>
+                <li>Identifikasi emosi (positif, negatif, netral)</li>
+                <li>Total handle time</li>
+                <li>Identifikasi pelanggan yang berkali-kali telepon</li>
+              </ul>
+              <li><strong>Data Preprocessing</strong></li>
+              <ul>
+                <li>Text Cleaning (hapus kata sisipan dan tanda baca)</li>
+                <li>Speaker Diarization (identifikasi siapa yang berbicara pada rekaman audio dan melabelkan menjadi
+                  speaker0, dan speaker1) </li>
+              </ul>
+
+              <li><strong>Modeling</strong></li>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Untuk modeling menggunakan pre-train yang
+                bersumber dari Hugging face sbb:</p>
+              <ul>
+                <li>Sentiment Analysis</li>
+                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Model RoBERTa yang di-fine-tune untuk
+                  klasifikasi sentimen (positif, negatif, netral) dalam bahasa
+                  Indonesia.</p>
+                <li>Emotion classification</li>
+                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Model RoBERTa yang di-fine-tune untuk
+                  mendeteksi emosi seperti: marah, senang, sedih, takut, netral
+                  dalam bahasa Indonesia.</p>
+              </ul>
+              <li><strong>Evaluation and Result</strong> </li>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Didapatkan hasil berupa score untuk
+                sentiment analys dan juga emotion classification. Score merupakan
+                logit yang diproses menggunakan fungsi softmax dengan range index probabilitas dari 0-1. Kemudian hasil
+                transkripsi serta score ini akan di simpan ke dalam database SQL Server Management Studio</p>
+
+
+
+            </ul>
+
+
+          </div>
+        </div>
+
+      </div>
+      <div class="button-back"><br><a href="index.html">Back</a></div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
