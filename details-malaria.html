@@ -33,7 +33,8 @@
 <body>
 
   <main id="main">
-    <!--section porto head -->
+
+    <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
@@ -44,11 +45,12 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/proyek/malaria1.jfif" alt="">
+                  <img src="assets/img/proyek/speech1.png" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="assets/img/proyek/malaria2.jfif" alt="">
+                  <img src="assets/img/proyek/speech3.png" alt="">
                 </div>
+
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -58,76 +60,66 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Kategori</strong>: Web App</li>
-                <li><strong>Implementasi</strong>: Python, Flask, HTML, CSS, JavaScript</a></li>
-                <li><strong>Tools</strong>: Visual Studio Code</li>
-                <li><strong>Sample Data</strong>: 4000 citra darah pasien positif malaria dan normal</li>
-                <li><strong>Source Data</strong>: National Institute of Health (NIH)</li>
-                <li><strong>Model</strong>: Convolutional Neural Network</li>
-                <li><strong>Library</strong>: Tensorflow, Keras, Matplotlib</li>
-
+                <li><strong>Category</strong>: Web Aplication</li>
+                <li><strong>Languages</strong>: Python, HTML, CSS, JavaScript, SQL</li>
+                <li><strong>Frameworks</strong>:Flask, bootstrap</li>
+                <li><strong>Tools</strong>: Visual studio code, SQL Server, Whisper, HuggingFace</li>
+                <li><strong>Model</strong>: RoBERTa fine tune</li>
+                <li><strong>Library</strong>: Transformers, pytorch, pyannote, speech_recognition</li>
               </ul>
             </div>
 
           </div>
           <div class="portfolio-description">
-            <h2>Identifying Malaria with Deep Learning</h2>
+            <h2>Speech Analytics for Smarter Support</h2>
             <ul>
               <li><strong>Problem Definition</strong></li>
               <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">
-                Malaria adalah penyakit yang disebabkan oleh nyamuk anopheles yang
-                terindetifikasi parasit plasmodium. WHO menyatakan terdapat sekitar 228 juta kasus yang
-                tersebar di seluruh dunia.
-              </p>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Bagaimana tes darah bisa mendeteksi malaria?
-                Parasit malaria dapat diidentifikasi dengan memeriksa di bawah mikroskop setetes darah pasien,
-                disebarkan sebagai "olesan darah" pada slide mikroskop. Sebelum pemeriksaan, spesimen diwarnai (paling
-                sering dengan pewarnaan Giemsa) untuk memberi parasit penampilan yang khas.
-
-                Tentu saja, bagaimana kita bisa mencegahnya sangat penting. Tetapi bagaimana kita dapat menemukan
-                parasit dan mengambil diagnosis dan pengobatan yang tepat sedini mungkin juga sangat penting</p>
-              <p>Solusi yang diusulkan :</p>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Membangun model deep learning untuk
-                mendeteksi parasit malaria yang terdapat pada citra sel darah merah
-              </p>
-              <li><strong>Data Collection</strong></li>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Dataset citra hapusan darah dengan label
-                (uninfected dan infected), data ini berasal dari National
-                Institute of health. Total data gambar adalah 4000 gambar sel darah dengan format RGB</p>
-              <li><strong>Exploratory Data Analysis (EDA)</strong></li>
-                <ul>
-                  <li>Citra sel parasit terdapat titik gelap yang mengidentifikasi nukleus parasit</li>
-                  <li>Ukuran citra input beragam</li>
-                  <li>Duplikasi citra yang mirip dan ketidakseimbangan kelas</li>
-                  <li>Generalisasi pengujian menggunakan mikroskop berbeda untuk menghindari ovt</li>
-                  <li>Identifikasi untuk skrining massal dengan lebih cepat</li>
-                </ul>
+                Customer service departments often receive dozens or even hundreds of calls daily. However, tracking
+                metrics such as call volume, call duration, customer satisfaction, and repeat callers is still limited
+                in many systems. </p>
+              <p>This project proposes an automated speech analytics solution that:</p>
+              <ul>
+                <li>Transcribes call audio to text using OpenAI Whisper </li>
+                <li>Analyzes sentiment and emotions using NLP models</li>
+                <li>Tracks key insights such as call frequency, duration, and customer satisfaction trends</li>
+              </ul>
+              <li><strong> Data Input</strong></li>
+              <ul>
+                <li>Customer service call recordings</li>
+                <li>Transcribed using Whisper for speech-to-text conversion</li>
+              </ul>
+              <li><strong> Exploratory Data Analysis (EDA)</strong></li>
+              <ul>
+                <li>Call volume per agent per day</li>
+                <li>Sentiment distribution (positive, negative, neutral)</li>
+                <li>Total handle time</li>
+                <li>Repeat caller detection</li>
+              </ul>
               <li><strong>Data Preprocessing</strong></li>
               <ul>
-                <li>Resize ukuran gambar menjadi 128x128 piksel</li>
-                <li>Augmentasi Citra (Transformasi acak dengan rotasi, flip, zoom)</li>
-                <li>Split dataset :</li>
-                <ul>
-                  <li>Train: 80%</li>
-                  <li>Validation: 20%</li>
-                  <li>Test: 10 data citra baru</li>
-                </ul>
+                <li>Text cleaning (removal of stopwords and punctuation)</li>
+                <li>Speaker diarization to label speakers (e.g., speaker_0, speaker_1) </li>
               </ul>
 
               <li><strong>Modeling</strong></li>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Model yang digunakan untuk proses
-                identifikasi malaria ini menggunakan Convolutional Neural Network
-                dengan reduksi layer menggunakan alexnet</p>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">For modeling, use pre-train sourced from HuggingFace as follows:</p>
               <ul>
-                <li>Loss Function: categorical crossentropy</li>
-                <li>Optimizer: Adam</li>
-                <li>Epochs: 50</li>
-                <li>Metriks: Accuracy</li>
+                <li>Sentiment Analysis</li>
+                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Fine-tuned RoBERTa model on Indonesian language sentiment labels (positif, negatif, netral)</p>
+                <li>Emotion classification</li>
+                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg"> Fine-tuned RoBERTa model to classify emotions (angry, happy,neutral.)</p>
               </ul>
-              <li><strong>Evaluation and Result</strong></li>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Proses pengujian akan mengidentifikasi citra
-                darah pasien apakah positif maupun negatif malaria, dengan
-                hasil akurasi sebesar 98%</p>
+              <li><strong>Evaluation and Result</strong> </li>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Output include :</p>
+              <ul>
+                <li>Transcription results</li>
+                <li>Sentiment scores</li>
+                <li>Emotion classification scores</li>
+              </ul>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Scores were processed using softmax function to convert logits into probability (0–1 scale). Final results were stored in SQL Server Management Studio for further analysis and visualization.</p>
+
+
             </ul>
 
 
@@ -135,9 +127,9 @@
         </div>
 
       </div>
-
+      <div class="button-back"><br><a href="index.html">Back</a></div>
     </section><!-- End Portfolio Details Section -->
-    <div class="button-back"><br><a href="index.html">Back</a></div>
+
   </main><!-- End #main -->
 
   <div id="preloader"></div>
