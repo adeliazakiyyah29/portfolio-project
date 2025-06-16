@@ -60,11 +60,12 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Kategori</strong>: Aplication</li>
-                <li><strong>Implementasi</strong>: Python, Flask, HTML, CSS, bootstrap, JavaScript, SQL</li>
-                <li><strong>Tools</strong>: Visual studio code, SQL Server</li>
+                <li><strong>Category</strong>: Web Aplication</li>
+                <li><strong>Languages</strong>: Python, HTML, CSS, JavaScript, SQL</li>
+                <li><strong>Frameworks</strong>:Flask, bootstrap</li>
+                <li><strong>Tools</strong>: Visual studio code, SQL Server, Whisper, HuggingFace</li>
                 <li><strong>Model</strong>: RoBERTa fine tune</li>
-                <li><strong>Library</strong>: Transformers huggingface, pytorch, pyannote, speech_recognition</li>
+                <li><strong>Library</strong>: Transformers, pytorch, pyannote, speech_recognition</li>
               </ul>
             </div>
 
@@ -74,57 +75,49 @@
             <ul>
               <li><strong>Problem Definition</strong></li>
               <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">
-                setiap harinya perusahaan layanan pelanggan menerima puluhan atau mungkin ratusan panggilan telepon
-                setiap
-                hari. Tapi proses pelacakan terkait jumlah panggilan, dan apakah
-                customer puas dengan pelayanan yang diberikan masih terbatas. </p>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">
-                Bagaimana jika ada sistem yang dapat melacak berapa lama mereka telpon, total handle time, berapa kali
-                customer telpon dan apakah bantuan call agent membantu? </p>
-              <p>Solusi yang diusulkan :</p>
+                Customer service departments often receive dozens or even hundreds of calls daily. However, tracking
+                metrics such as call volume, call duration, customer satisfaction, and repeat callers is still limited
+                in many systems. </p>
+              <p>This project proposes an automated speech analytics solution that:</p>
               <ul>
-                <li>Speech recognition </li>
-                <p>menggunakan model speech to text menggunakan whisper</p>
-                <li>Natural Language Processing</li>
-                <p>1. Deteksi sentimen</p>
-                <p>2. Analisis emosi pelanggan</p>
+                <li>Transcribes call audio to text using OpenAI Whisper </li>
+                <li>Analyzes sentiment and emotions using NLP models</li>
+                <li>Tracks key insights such as call frequency, duration, and customer satisfaction trends</li>
               </ul>
               <li><strong> Data Input</strong></li>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Rekaman audio percakapan pelanggan
-                menggunakan OpenAI Whisper</p>
+              <ul>
+                <li>Customer service call recordings</li>
+                <li>Transcribed using Whisper for speech-to-text conversion</li>
+              </ul>
               <li><strong> Exploratory Data Analysis (EDA)</strong></li>
               <ul>
-                <li>Total jumlah panggilan perhari setiap agent service</li>
-                <li>Identifikasi emosi (positif, negatif, netral)</li>
+                <li>Call volume per agent per day</li>
+                <li>Sentiment distribution (positive, negative, neutral)</li>
                 <li>Total handle time</li>
-                <li>Identifikasi pelanggan yang berkali-kali telepon</li>
+                <li>Repeat caller detection</li>
               </ul>
               <li><strong>Data Preprocessing</strong></li>
               <ul>
-                <li>Text Cleaning (hapus kata sisipan dan tanda baca)</li>
-                <li>Speaker Diarization (identifikasi siapa yang berbicara pada rekaman audio dan melabelkan menjadi
-                  speaker0, dan speaker1) </li>
+                <li>Text cleaning (removal of stopwords and punctuation)</li>
+                <li>Speaker diarization to label speakers (e.g., speaker_0, speaker_1) </li>
               </ul>
 
               <li><strong>Modeling</strong></li>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Untuk modeling menggunakan pre-train yang
-                bersumber dari Hugging face sbb:</p>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">For modeling, use pre-train sourced from HuggingFace as follows:</p>
               <ul>
                 <li>Sentiment Analysis</li>
-                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Model RoBERTa yang di-fine-tune untuk
-                  klasifikasi sentimen (positif, negatif, netral) dalam bahasa
-                  Indonesia.</p>
+                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Fine-tuned RoBERTa model on Indonesian language sentiment labels (positif, negatif, netral)</p>
                 <li>Emotion classification</li>
-                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Model RoBERTa yang di-fine-tune untuk
-                  mendeteksi emosi seperti: marah, senang, sedih, takut, netral
-                  dalam bahasa Indonesia.</p>
+                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg"> Fine-tuned RoBERTa model to classify emotions (angry, happy,neutral.)</p>
               </ul>
               <li><strong>Evaluation and Result</strong> </li>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Didapatkan hasil berupa score untuk
-                sentiment analys dan juga emotion classification. Score merupakan
-                logit yang diproses menggunakan fungsi softmax dengan range index probabilitas dari 0-1. Kemudian hasil
-                transkripsi serta score ini akan di simpan ke dalam database SQL Server Management Studio</p>
-
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Output include :</p>
+              <ul>
+                <li>Transcription results</li>
+                <li>Sentiment scores</li>
+                <li>Emotion classification scores</li>
+              </ul>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Scores were processed using softmax function to convert logits into probability (0–1 scale). Final results were stored in SQL Server Management Studio for further analysis and visualization.</p>
 
 
             </ul>
