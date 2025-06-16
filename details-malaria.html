@@ -33,8 +33,7 @@
 <body>
 
   <main id="main">
-
-    <!-- ======= Portfolio Details Section ======= -->
+    <!--section porto head -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
@@ -45,12 +44,14 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/proyek/speech1.png" alt="">
+                  <img src="assets/img/proyek/malaria1.jfif" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="assets/img/proyek/speech3.png" alt="">
+                  <img src="assets/img/proyek/malaria2.jfif" alt="">
                 </div>
-
+                <div class="swiper-slide">
+                  <img src="assets/img/proyek/malaria3.png" alt="">
+                </div>
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -60,66 +61,68 @@
             <div class="portfolio-info">
               <h3>Project information</h3>
               <ul>
-                <li><strong>Category</strong>: Web Aplication</li>
-                <li><strong>Languages</strong>: Python, HTML, CSS, JavaScript, SQL</li>
-                <li><strong>Frameworks</strong>:Flask, bootstrap</li>
-                <li><strong>Tools</strong>: Visual studio code, SQL Server, Whisper, HuggingFace</li>
-                <li><strong>Model</strong>: RoBERTa fine tune</li>
-                <li><strong>Library</strong>: Transformers, pytorch, pyannote, speech_recognition</li>
+                <li><strong>Category</strong>: Web App</li>
+                <li><strong>Languages</strong>: Python, HTML, CSS, JavaScript</a></li>
+                <li><strong>Frameworks</strong>: Flask</a></li>
+                <li><strong>Tools</strong>: Visual Studio Code</li>
+                <li><strong>Library</strong>: Tensorflow, Keras, Matplotlib</li>
+
               </ul>
             </div>
 
           </div>
           <div class="portfolio-description">
-            <h2>Speech Analytics for Smarter Support</h2>
+            <h2>Identifying Malaria with Deep Learning</h2>
             <ul>
               <li><strong>Problem Definition</strong></li>
               <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">
-                Customer service departments often receive dozens or even hundreds of calls daily. However, tracking
-                metrics such as call volume, call duration, customer satisfaction, and repeat callers is still limited
-                in many systems. </p>
-              <p>This project proposes an automated speech analytics solution that:</p>
+                Malaria is a life-threatening disease caused by Plasmodium parasites, transmitted by Anopheles
+                mosquitoes. According to the WHO, over 228 million cases are reported annually worldwide.
+              </p>
+              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">How can a blood test detect malaria?
+                Traditionally, malaria diagnosis requires manual examination of blood smear slides under a microscope by
+                trained experts, which is time-consuming and error-prone.
+
+                This project proposes a deep learning-based image classification model to automatically detect malaria
+                parasites in red blood cell images.</p>
+              
+              <li><strong>Data Collection</strong></li>
               <ul>
-                <li>Transcribes call audio to text using OpenAI Whisper </li>
-                <li>Analyzes sentiment and emotions using NLP models</li>
-                <li>Tracks key insights such as call frequency, duration, and customer satisfaction trends</li>
+                <li>Dataset: 2,000 RGB images of blood smears labeled as infected and uninfected</li>
+                <li>Source: National Institute of Health (NIH) public dataset</li>
               </ul>
-              <li><strong> Data Input</strong></li>
+              <li><strong>Exploratory Data Analysis (EDA)</strong></li>
               <ul>
-                <li>Customer service call recordings</li>
-                <li>Transcribed using Whisper for speech-to-text conversion</li>
-              </ul>
-              <li><strong> Exploratory Data Analysis (EDA)</strong></li>
-              <ul>
-                <li>Call volume per agent per day</li>
-                <li>Sentiment distribution (positive, negative, neutral)</li>
-                <li>Total handle time</li>
-                <li>Repeat caller detection</li>
+                <li>Parasite nuclei appear as dark purple dots in infected cells</li>
+                <li>Image sizes vary; some duplication and class imbalance present</li>
+                <li>Images collected from multiple microscopes, contributing to noise</li>
+                <li>Class distribution was slightly skewed</li>
               </ul>
               <li><strong>Data Preprocessing</strong></li>
               <ul>
-                <li>Text cleaning (removal of stopwords and punctuation)</li>
-                <li>Speaker diarization to label speakers (e.g., speaker_0, speaker_1) </li>
+                <li>Image resizing to 128x128 pixels</li>
+                <li>Augmentasi Citra (using random rotation, flip, and zoom)</li>
+                <li>Split dataset :</li>
+                <ul>
+                  <li>Train: 80%</li>
+                  <li>Validation: 20%</li>
+                  <li>Test: 10 new unseen images</li>
+                </ul>
               </ul>
 
               <li><strong>Modeling</strong></li>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">For modeling, use pre-train sourced from HuggingFace as follows:</p>
               <ul>
-                <li>Sentiment Analysis</li>
-                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Fine-tuned RoBERTa model on Indonesian language sentiment labels (positif, negatif, netral)</p>
-                <li>Emotion classification</li>
-                <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg"> Fine-tuned RoBERTa model to classify emotions (angry, happy,neutral.)</p>
+                <li>Model: Convolutional Neural Network (CNN) with reduced layers based on AlexNet</li>
+                <li>Loss Function: categorical crossentropy</li>
+                <li>Optimizer: Adam</li>
+                <li>Epochs: 50</li>
+                <li>Metriks: Accuracy, confusion matrix</li>
               </ul>
-              <li><strong>Evaluation and Result</strong> </li>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Output include :</p>
+              <li><strong>Evaluation and Result</strong></li>
               <ul>
-                <li>Transcription results</li>
-                <li>Sentiment scores</li>
-                <li>Emotion classification scores</li>
+                <li>Achieved 98% test accuracy in identifying whether a cell is infected with malaria</li>
+                <li>Model successfully learned parasite pattern features in blood cell images</li>
               </ul>
-              <p class="font-medium text-justify mb-10 max-w-xl lg:text-lg">Scores were processed using softmax function to convert logits into probability (0–1 scale). Final results were stored in SQL Server Management Studio for further analysis and visualization.</p>
-
-
             </ul>
 
 
@@ -127,9 +130,9 @@
         </div>
 
       </div>
-      <div class="button-back"><br><a href="index.html">Back</a></div>
-    </section><!-- End Portfolio Details Section -->
 
+    </section><!-- End Portfolio Details Section -->
+    <div class="button-back"><br><a href="index.html">Back</a></div>
   </main><!-- End #main -->
 
   <div id="preloader"></div>
